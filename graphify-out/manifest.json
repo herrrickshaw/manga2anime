@@ -1,0 +1,26 @@
+{
+  "README.md": {
+    "mtime": 1789434690.8240826,
+    "seen": 1789968761.92934,
+    "ast_hash": "84c5f1c96f920446e48055803f9f3c48",
+    "semantic_hash": ""
+  },
+  "assets/frame1_source.png": {
+    "mtime": 1789431817.8183973,
+    "seen": 1789968761.929347,
+    "ast_hash": "e6fb1b38bad73845958f3c8346399393",
+    "semantic_hash": ""
+  },
+  "assets/frame2_generated.png": {
+    "mtime": 1789431817.821123,
+    "seen": 1789968761.92935,
+    "ast_hash": "dc4509977a131d1618152cc568920ecb",
+    "semantic_hash": ""
+  },
+  "assets/svd_output.mp4": {
+    "mtime": 1789431817.8237598,
+    "seen": 1789968761.929353,
+    "ast_hash": "526213c37001b39d96a0d7dd0e6b473e",
+    "semantic_hash": ""
+  }
+}
