@@ -1,5 +1,9 @@
 # manga2anime
 
+<!-- how-to-use-with-ai -->
+> **New here?** See [How to use this repo with AI (Claude, Gemini, ChatGPT)](HOW_TO_USE_WITH_AI.md) — clone it, paste it into an AI tool, and ask in plain English.
+
+
 Experiments animating a static manga/anime-style panel into short video clips using **open-source** image-to-video models, run on free hosted GPUs (Hugging Face Spaces / Colab) — never on local hardware.
 
 ## Source art
