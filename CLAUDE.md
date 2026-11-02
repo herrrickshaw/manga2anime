@@ -2,6 +2,14 @@
 
 Guidance for Claude Code sessions working in this repository.
 
+## Repo in one minute
+- Two hand-written scripts in `original/`: `render_lantern_oracle.py` (procedural Pillow renderer →
+  `assets/lantern_oracle.mp4`, needs `ffmpeg`) and `svd_run.py` (thin `gradio_client` call to the hosted
+  Stable Video Diffusion Space). See `README.md` for the stage table and data sources.
+- `assets/` and `graphify-out/` are tracked outputs / generated artefacts: never regenerate or edit them in a PR.
+- Model inference runs on hosted GPUs (HF Spaces / Colab) only; never download weights or run models locally.
+- Verify with `ruff check .` and `pytest -q` (tests mock ffmpeg and Gradio; no network).
+
 <!-- source-fetch-toolkit:v1 (managed by ~/bin/add_source_fetch_section.py — edit there, not here) -->
 ## Source fetching for data collection & literature surveys
 
