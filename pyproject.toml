@@ -1,0 +1,24 @@
+[project]
+name = "manga2anime"
+version = "0.1.0"
+description = "Experiments animating a static manga/anime-style panel with open-source image-to-video models on hosted GPUs"
+requires-python = ">=3.9"
+dependencies = ["numpy", "Pillow"]
+
+[project.optional-dependencies]
+svd = ["gradio_client"]
+dev = ["pytest", "ruff"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+extend-exclude = ["assets", "graphify-out"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["render_lantern_oracle", "svd_run"]

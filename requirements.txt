@@ -1,0 +1,4 @@
+numpy
+Pillow
+# only for original/svd_run.py (calls the hosted Hugging Face Space):
+gradio_client
