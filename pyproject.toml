@@ -22,3 +22,6 @@ testpaths = ["tests"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["render_lantern_oracle", "svd_run"]
+
+[tool.setuptools]
+py-modules = []
