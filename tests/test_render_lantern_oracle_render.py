@@ -12,6 +12,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "original"))
 import render_lantern_oracle as r  # noqa: E402
 
 
+class _Rec:
+    def __init__(self):
+        self.calls = []
+
+    def __getattr__(self, name):
+        return lambda *a, **k: self.calls.append((name, a, k))
+
+
 def _canvas():
     return Image.new("RGB", (r.W * r.S, r.H * r.S), (0, 0, 0))
 
@@ -182,9 +190,12 @@ def test_draw_frame_border_cartouche_and_title(monkeypatch):
     assert img.getpixel((200 * r.S, cy * r.S)) == r.INK                   # cartouche body
     assert img.getpixel((171 * r.S, cy * r.S)) == r.GOLD                  # cartouche outline
     assert img.getpixel((100 * r.S, cy * r.S)) == (0, 0, 0)               # nothing outside the cartouche
-    arr = np.asarray(img)
-    title = arr[(cy - 15) * r.S:(cy + 15) * r.S, 250 * r.S:(r.W - 250) * r.S]
-    assert (title == r.GOLD).all(axis=2).any()                            # the title text is drawn in gold
+    rec = _Rec()
+    r.draw_frame(rec)                                                     # font-independent check of the title call
+    (args, kw), = [(a, k) for n, a, k in rec.calls if n == "text"]
+    pos, text = args
+    assert text == "THE LANTERN ORACLE" and pos == (r.s(r.W / 2), r.s(cy))
+    assert kw["fill"] == r.GOLD and kw["anchor"] == "mm"
 
 
 # ---------- render / main ----------
